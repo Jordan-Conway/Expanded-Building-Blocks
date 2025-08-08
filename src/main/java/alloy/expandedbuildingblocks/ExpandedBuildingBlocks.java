@@ -5,6 +5,8 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import alloy.expandedbuildingblocks.item.ModItems;
+
 public class ExpandedBuildingBlocks implements ModInitializer {
 	public static final String MOD_ID = "expanded-building-blocks";
 
@@ -20,5 +22,7 @@ public class ExpandedBuildingBlocks implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+
+		ModItems.registerModItems();
 	}
 }
