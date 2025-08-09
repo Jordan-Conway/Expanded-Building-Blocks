@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": 
+    [
+        "##",
+        "##"
+    ],
+    "key": 
+    {
+        "#": "minecraft:iron_block"
+    },
+    "result":
+    {
+        "id": "expanded-building-blocks:cut_iron_block",
+        "count": 4
+    }
+}

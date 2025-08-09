@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "":
+        {
+            "model": "expanded-building-blocks:block/cut_iron_block"
+        }
+    }
+}

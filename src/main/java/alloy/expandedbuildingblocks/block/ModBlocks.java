@@ -22,7 +22,15 @@ public class ModBlocks {
             .strength(3f, 6f)
             .requiresTool()
             .sounds(BlockSoundGroup.METAL)
-        );
+    );
+
+    public static final Block CUT_IRON_BLOCK = registerBlock(
+        "cut_iron_block",
+        AbstractBlock.Settings.create()
+            .strength(5f, 6f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.IRON)
+    );
 
     private static Block registerBlock(String name, AbstractBlock.Settings blockSettings)
     {
@@ -45,6 +53,7 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(ModBlocks.CUT_GOLD_BLOCK);
+            entries.add(ModBlocks.CUT_IRON_BLOCK);
         });
     }
 }
