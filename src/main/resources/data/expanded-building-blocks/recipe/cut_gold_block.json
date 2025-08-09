@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": 
+    [
+        "##",
+        "##"
+    ],
+    "key": 
+    {
+        "#": "minecraft:gold_block"
+    },
+    "result":
+    {
+        "id": "expanded-building-blocks:cut_gold_block",
+        "count": 4
+    }
+}
