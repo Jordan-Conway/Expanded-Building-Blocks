@@ -10,5 +10,6 @@ public class ExpandedBuildingBlocksClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
 		BlockRenderLayerMap.putBlock(ModBlocks.IRON_GRATE_BLOCK, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.GOLD_GRATE_BLOCK, BlockRenderLayer.CUTOUT);
 	}
 }

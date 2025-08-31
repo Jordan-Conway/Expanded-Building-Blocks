@@ -41,6 +41,15 @@ public class ModBlocks {
             .nonOpaque()
     );
 
+    public static final Block GOLD_GRATE_BLOCK = registerBlock(
+        "gold_grate_block",
+        AbstractBlock.Settings.create()
+            .strength(3f, 6f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.METAL)
+            .nonOpaque()
+    );
+
     private static Block registerBlock(String name, AbstractBlock.Settings blockSettings)
     {
         RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(ExpandedBuildingBlocks.MOD_ID, name));
@@ -64,6 +73,7 @@ public class ModBlocks {
             entries.add(ModBlocks.CUT_GOLD_BLOCK);
             entries.add(ModBlocks.CUT_IRON_BLOCK);
             entries.add(ModBlocks.IRON_GRATE_BLOCK);
+            entries.add(ModBlocks.GOLD_GRATE_BLOCK);
         });
     }
 }

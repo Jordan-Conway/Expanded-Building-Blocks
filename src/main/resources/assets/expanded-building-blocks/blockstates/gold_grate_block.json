@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "":
+        {
+            "model": "expanded-building-blocks:block/gold_grate_block"
+        }
+    }
+}

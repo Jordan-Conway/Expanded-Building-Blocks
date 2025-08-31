@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:block",
+    "pools": 
+    [
+        {
+            "rolls": 1,
+            "entries":
+            [
+                {
+                    "type": "minecraft:item",
+                    "name": "expanded-building-blocks:gold_grate_block"
+                }
+            ],
+            "conditions":
+            [
+                {
+                    "condition": "minecraft:survives_explosion"
+                }
+            ]
+        }
+    ]
+}

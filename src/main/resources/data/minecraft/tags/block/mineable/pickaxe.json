@@ -4,6 +4,7 @@
     [
         "expanded-building-blocks:cut_gold_block",
         "expanded-building-blocks:cut_iron_block",
-        "expanded-building-blocks:iron_grate_block"
+        "expanded-building-blocks:iron_grate_block",
+        "expanded-building-blocks:gold_grate_block"
     ]
 }
