@@ -1,0 +1,7 @@
+{
+    "model":
+    {
+        "type": "minecraft:model",
+        "model": "expanded-building-blocks:block/iron_grate_block"
+    }
+}

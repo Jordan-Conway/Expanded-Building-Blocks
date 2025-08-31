@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_all",
+    "textures":
+    {
+        "all": "expanded-building-blocks:block/iron_grate_block"
+    }
+}

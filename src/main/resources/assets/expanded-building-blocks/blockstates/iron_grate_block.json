@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "":
+        {
+            "model": "expanded-building-blocks:block/iron_grate_block"
+        }
+    }
+}
