@@ -1,6 +1,9 @@
 package alloy.expandedbuildingblocks.block;
 
+import java.util.function.Function;
+
 import alloy.expandedbuildingblocks.ExpandedBuildingBlocks;
+import alloy.expandedbuildingblocks.block.custom.GrateBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -17,53 +20,74 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
     public static final Block CUT_GOLD_BLOCK = registerBlock(
-        "cut_gold_block", 
+        "cut_gold_block",
+        Block::new, 
         AbstractBlock.Settings.create()
             .strength(3f, 6f)
             .requiresTool()
-            .sounds(BlockSoundGroup.METAL)
+            .sounds(BlockSoundGroup.METAL),
+        true
     );
 
     public static final Block CUT_IRON_BLOCK = registerBlock(
         "cut_iron_block",
+        Block::new,
         AbstractBlock.Settings.create()
             .strength(5f, 6f)
             .requiresTool()
-            .sounds(BlockSoundGroup.IRON)
+            .sounds(BlockSoundGroup.IRON),
+        true
     );
 
     public static final Block IRON_GRATE_BLOCK = registerBlock(
-        "iron_grate_block", 
+        "iron_grate_block",
+        GrateBlock::new,
         AbstractBlock.Settings.create()
             .strength(3f, 6f)
             .requiresTool()
             .sounds(BlockSoundGroup.IRON)
-            .nonOpaque()
+            .nonOpaque(),
+        true
     );
 
     public static final Block GOLD_GRATE_BLOCK = registerBlock(
         "gold_grate_block",
+        GrateBlock::new,
         AbstractBlock.Settings.create()
             .strength(3f, 6f)
             .requiresTool()
             .sounds(BlockSoundGroup.METAL)
-            .nonOpaque()
+            .nonOpaque(),
+        true
     );
 
-    private static Block registerBlock(String name, AbstractBlock.Settings blockSettings)
-    {
-        RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(ExpandedBuildingBlocks.MOD_ID, name));
-        Block block = new Block(blockSettings.registryKey(key));
-        registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, key, block);
-    }
+    private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
+		// Create a registry key for the block
+		RegistryKey<Block> blockKey = keyOfBlock(name);
+		// Create the block instance
+		Block block = blockFactory.apply(settings.registryKey(blockKey));
 
-    private static void registerBlockItem(String name, Block block)
-    {
-        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(ExpandedBuildingBlocks.MOD_ID, name));
-        BlockItem item = new BlockItem(block, new Item.Settings().registryKey(key));
-        Registry.register(Registries.ITEM, key, item);
-    }
+		// Sometimes, you may not want to register an item for the block.
+		// Eg: if it's a technical block like `minecraft:moving_piston` or `minecraft:end_gateway`
+		if (shouldRegisterItem) {
+			// Items need to be registered with a different type of registry key, but the ID
+			// can be the same.
+			RegistryKey<Item> itemKey = keyOfItem(name);
+
+			BlockItem blockItem = new BlockItem(block, new Item.Settings().registryKey(itemKey));
+			Registry.register(Registries.ITEM, itemKey, blockItem);
+		}
+
+		return Registry.register(Registries.BLOCK, blockKey, block);
+	}
+
+	private static RegistryKey<Block> keyOfBlock(String name) {
+		return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(ExpandedBuildingBlocks.MOD_ID, name));
+	}
+
+	private static RegistryKey<Item> keyOfItem(String name) {
+		return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(ExpandedBuildingBlocks.MOD_ID, name));
+	}
 
     public static void registerModBlocks()
     {
