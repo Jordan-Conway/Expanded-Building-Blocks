@@ -61,6 +61,16 @@ public class ModBlocks {
         true
     );
 
+    public static final Block CALCITE_BRICKS_BLOCK = registerBlock(
+        "calcite_bricks_block",
+         Block::new,
+          AbstractBlock.Settings.create()
+            .strength(0.75f, 0.75f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.CALCITE),
+        true
+    );
+
     private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
 		// Create a registry key for the block
 		RegistryKey<Block> blockKey = keyOfBlock(name);
@@ -98,6 +108,7 @@ public class ModBlocks {
             entries.add(ModBlocks.CUT_IRON_BLOCK);
             entries.add(ModBlocks.IRON_GRATE_BLOCK);
             entries.add(ModBlocks.GOLD_GRATE_BLOCK);
+            entries.add(ModBlocks.CALCITE_BRICKS_BLOCK);
         });
     }
 }

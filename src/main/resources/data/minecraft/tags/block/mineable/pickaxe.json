@@ -2,6 +2,7 @@
     "replace": false,
     "values":
     [
+        "expanded-building-blocks:calcite_bricks_block",
         "expanded-building-blocks:cut_gold_block",
         "expanded-building-blocks:cut_iron_block",
         "expanded-building-blocks:iron_grate_block",

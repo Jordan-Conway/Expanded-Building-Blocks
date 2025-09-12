@@ -1,0 +1,7 @@
+{
+    "model":
+    {
+        "type": "minecraft:model",
+        "model": "expanded-building-blocks:block/calcite_bricks_block"
+    }
+}

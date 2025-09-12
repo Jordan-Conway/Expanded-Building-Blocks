@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": 
+    [
+        "##",
+        "##"
+    ],
+    "key": 
+    {
+        "#": "minecraft:calcite"
+    },
+    "result":
+    {
+        "id": "expanded-building-blocks:calcite_bricks_block",
+        "count": 4
+    }
+}
