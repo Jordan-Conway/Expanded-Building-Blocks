@@ -2,6 +2,6 @@
     "model":
     {
         "type": "minecraft:model",
-        "model": "expanded-building-blocks:block/cut_gold_block"
+        "model": "expanded-building-blocks:block/cut_iron_block"
     }
 }
