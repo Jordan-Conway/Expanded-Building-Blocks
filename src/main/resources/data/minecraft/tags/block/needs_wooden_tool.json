@@ -2,6 +2,7 @@
     "replace": false,
     "values": 
     [
-        "expanded-building-blocks:calcite_bricks_block"
+        "expanded-building-blocks:calcite_bricks_block",
+        "expanded-building-blocks:cracked_calcite_bricks_block"
     ]
 }

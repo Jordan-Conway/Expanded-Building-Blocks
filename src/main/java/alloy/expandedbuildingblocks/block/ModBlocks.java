@@ -61,10 +61,20 @@ public class ModBlocks {
         true
     );
 
+    public static final Block CRACKED_CALCITE_BRICKS_BLOCK = registerBlock(
+        "cracked_calcite_bricks_block",
+        Block::new,
+        AbstractBlock.Settings.create()
+            .strength(0.75f, 0.75f)
+            .requiresTool()
+            .sounds(BlockSoundGroup.CALCITE),
+            true
+    );
+
     public static final Block CALCITE_BRICKS_BLOCK = registerBlock(
         "calcite_bricks_block",
-         Block::new,
-          AbstractBlock.Settings.create()
+        Block::new,
+        AbstractBlock.Settings.create()
             .strength(0.75f, 0.75f)
             .requiresTool()
             .sounds(BlockSoundGroup.CALCITE),
