@@ -31,3 +31,9 @@ jobs:
 
     - name: Run build
       run: ./gradlew build --stacktrace --info
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifacts@v4
+      with:
+        name: mod-jar
+        path: build/libs/*.jar
