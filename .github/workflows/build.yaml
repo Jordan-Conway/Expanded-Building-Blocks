@@ -12,8 +12,10 @@ jobs:
 
     - name: Refresh Dependecies
       run: ./gradlew --refresh-dependencies
+      with:
+        java-version: 21
 
-    - name: Set up JDK 17
+    - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
         distribution: temurin
