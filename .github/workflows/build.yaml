@@ -10,16 +10,14 @@ jobs:
     - name: Checkout project sources
       uses: actions/checkout@v4
 
-    - name: Refresh Dependecies
-      run: ./gradlew --refresh-dependencies
-      with:
-        java-version: 21
-
     - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
         distribution: temurin
         java-version: 21
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
 
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
@@ -28,5 +26,8 @@ jobs:
         build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
         build-scan-terms-of-use-agree: "yes"
 
+    - name: Refresh Dependecies
+      run: ./gradlew --refresh-dependencies
+
     - name: Run build
-      run: ./gradlew build --stacktrace --info --refresh-dependencies
+      run: ./gradlew build --stacktrace --info
