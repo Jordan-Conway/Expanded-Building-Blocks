@@ -20,7 +20,7 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
     public static final Block CUT_GOLD_BLOCK = registerBlock(
-        "cut_gold_block",
+    "cut_gold_block",
         Block::new, 
         AbstractBlock.Settings.create()
             .strength(3f, 6f)
@@ -30,7 +30,7 @@ public class ModBlocks {
     );
 
     public static final Block CUT_IRON_BLOCK = registerBlock(
-        "cut_iron_block",
+    "cut_iron_block",
         Block::new,
         AbstractBlock.Settings.create()
             .strength(5f, 6f)
@@ -40,7 +40,7 @@ public class ModBlocks {
     );
 
     public static final Block IRON_GRATE_BLOCK = registerBlock(
-        "iron_grate_block",
+    "iron_grate_block",
         GrateBlock::new,
         AbstractBlock.Settings.create()
             .strength(3f, 6f)
@@ -51,7 +51,7 @@ public class ModBlocks {
     );
 
     public static final Block GOLD_GRATE_BLOCK = registerBlock(
-        "gold_grate_block",
+    "gold_grate_block",
         GrateBlock::new,
         AbstractBlock.Settings.create()
             .strength(3f, 6f)
@@ -62,7 +62,7 @@ public class ModBlocks {
     );
 
     public static final Block CRACKED_CALCITE_BRICKS_BLOCK = registerBlock(
-        "cracked_calcite_bricks_block",
+    "cracked_calcite_bricks_block",
         Block::new,
         AbstractBlock.Settings.create()
             .strength(0.75f, 0.75f)
@@ -72,7 +72,7 @@ public class ModBlocks {
     );
 
     public static final Block CALCITE_BRICKS_BLOCK = registerBlock(
-        "calcite_bricks_block",
+ "calcite_bricks_block",
         Block::new,
         AbstractBlock.Settings.create()
             .strength(0.75f, 0.75f)
@@ -119,6 +119,7 @@ public class ModBlocks {
             entries.add(ModBlocks.IRON_GRATE_BLOCK);
             entries.add(ModBlocks.GOLD_GRATE_BLOCK);
             entries.add(ModBlocks.CALCITE_BRICKS_BLOCK);
+            entries.add(ModBlocks.CRACKED_CALCITE_BRICKS_BLOCK);
         });
     }
 }
